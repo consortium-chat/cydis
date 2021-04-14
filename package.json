@@ -1,6 +1,6 @@
 {
   "name": "cydis",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "Cytu.be <-> Discord bridge",
   "main": "index.js",
   "scripts": {

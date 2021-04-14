@@ -3,7 +3,7 @@ import fs from "fs";
 import cytubeClient from "cytube-client";
 import {get, set} from "./terrible_db.js";
 const client = new Discord.Client();
-const bridgeChannelId = "829604255412649994";
+const bridgeChannelId = "703416093586358342";
 const secrets = JSON.parse(fs.readFileSync("secrets.json", "utf8"));
 
 client.on('ready', () => {
@@ -39,6 +39,10 @@ let cyClient = await cytubeClient.connect('consortium');
 cyClient.on('chatMsg',function(msg){
     //console.log(msg);
     if (msg.time <= get() || msg.username == "cydis") return;
+    let content = msg.msg;
+    content = content.replaceAll("&gt;",">");
+    content = content.replaceAll("&lt;","<");
+    content = content.replaceAll("&amp;","&");
     webhookClient.send(msg.msg, {username: msg.username});
     set(msg.time);
 });
