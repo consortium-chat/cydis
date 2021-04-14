@@ -43,7 +43,7 @@ cyClient.on('chatMsg',function(msg){
     content = content.replaceAll("&gt;",">");
     content = content.replaceAll("&lt;","<");
     content = content.replaceAll("&amp;","&");
-    webhookClient.send(msg.msg, {username: msg.username});
+    webhookClient.send(content, {username: msg.username});
     set(msg.time);
 });
 
