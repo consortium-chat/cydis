@@ -11,7 +11,7 @@
   "author": "Shelvacu",
   "license": "AGPL-3.0-or-later",
   "dependencies": {
-    "cytube-client": "^1.2.1",
+    "cytube-client": "shelvacu/cytube-client",
     "discord.js": "^12.5.3"
   }
 }
