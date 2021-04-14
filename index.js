@@ -40,9 +40,9 @@ cyClient.on('chatMsg',function(msg){
     //console.log(msg);
     if (msg.time <= get() || msg.username == "cydis") return;
     let content = msg.msg;
-    content = content.replaceAll("&gt;",">");
-    content = content.replaceAll("&lt;","<");
-    content = content.replaceAll("&amp;","&");
+    content = content.split("&gt;").join(">");
+    content = content.split("&lt;").join("<");
+    content = content.split("&amp;").join("&");
     webhookClient.send(msg.msg, {username: msg.username});
     set(msg.time);
 });
